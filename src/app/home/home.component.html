@@ -1,0 +1,44 @@
+<div>
+    <p class="cobain">home works!</p>
+    <form>
+        <label>title</label>
+        <input #myinput (input)="onChange($event.target.value)">
+        <button (click)="display(myinput.value)">click me</button>
+    </form>
+    <input [(ngModel)]="name" type="text">{{name}}
+</div>
+
+<div *ngIf="displayname; then thenblock; else elseblock"></div>
+
+<ng-template #thenblock>
+    <h2>Display</h2>
+</ng-template>
+
+<ng-template #elseblock>
+    <h2>Hidden</h2>
+</ng-template>
+
+<div [ngSwitch]="color">
+    <div *ngSwitchCase="'red'">You pick red color</div>
+    <div *ngSwitchCase="'blue'">You pick blue color</div>
+    <div *ngSwitchCase="'green'">You pick green color</div>
+    <div *ngSwitchDefault>Pick again</div>
+</div>
+
+<div *ngFor=" let color of colors; even as e">
+    <p>{{e}} {{color}}</p>
+</div>
+
+<p>{{message}}</p>
+<app-child (childEvent)="message=$event" [parentData]="nameChild"></app-child>
+
+<p>{{date}}</p>
+<p>{{date | date: 'short'}}</p>
+<p>{{date | date: 'shortTime'}}</p>
+<p>{{date | date: 'shortDate'}}</p>
+
+<p>{{person | uppercase}}</p>
+<p>{{ 0.50 | percent}}</p>
+
+<app-employee-list></app-employee-list>
+<app-employee-detail></app-employee-detail>
