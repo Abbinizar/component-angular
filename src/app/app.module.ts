@@ -9,6 +9,7 @@ import { ChildComponent } from './child/child.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 import { EmployeeService } from './employee-list/employee.service';
+import {HttpClientModule} from "@angular/common/http"
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { EmployeeService } from './employee-list/employee.service';
     EmployeeListComponent,
     EmployeeDetailComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [EmployeeService],
   bootstrap: [AppComponent],
 })
